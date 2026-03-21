@@ -23,10 +23,10 @@ export default function Overview(){
 
       <main className="overview-main container" style={{paddingTop: '1.5rem', paddingBottom: '3rem'}}>
         <div className="market-names-row" aria-label="Supermärkte">
-          <div className="name"><a href="/market?id=aldi"><img src="/images/Logo Aldi.jpeg" alt="Aldi Süd" style={{height:36}}/></a></div>
-          <div className="name"><a href="/market?id=lidl"><img src="/images/Logo Lidl.jpeg" alt="Lidl" style={{height:36}}/></a></div>
-          <div className="name"><a href="/market?id=penny"><img src="/images/Logo Penny.jpeg" alt="Penny" style={{height:36}}/></a></div>
-          <div className="name"><a href="/market?id=kaufland"><img src="/images/Logo Kaufland.jpeg" alt="Kaufland" style={{height:36}}/></a></div>
+          <div className="name"><a href="/market?id=aldi"><img src="/images/aldi.jpg" alt="Aldi Süd" style={{height:36}}/></a></div>
+          <div className="name"><a href="/market?id=lidl"><img src="/images/lidl.jpg" alt="Lidl" style={{height:36}}/></a></div>
+          <div className="name"><a href="/market?id=penny"><img src="/images/penny.jpg" alt="Penny" style={{height:36}}/></a></div>
+          <div className="name"><a href="/market?id=kaufland"><img src="/images/kaufland.jpg" alt="Kaufland" style={{height:36}}/></a></div>
         </div>
         <h1 style={{display:'none'}}>Ausführliche Übersicht — Kurz und strukturiert</h1>
 
