@@ -48,28 +48,28 @@ const bodyHtml = `
       <div class="market-item">
         <!-- Aldi: logo links to official homepage -->
         <a class="market-link" href="https://www.aldi-sued.de" title="Aldi Süd — Webseite" target="_blank" rel="noopener noreferrer">
-          <img src="/images/aldi.svg" alt="Aldi Süd Logo">
+          <img src="/images/Logo Aldi.jpeg" alt="Aldi Süd Logo">
         </a>
       </div>
 
       <div class="market-item">
         <!-- Lidl: logo links to official homepage -->
         <a class="market-link" href="https://www.lidl.de" title="Lidl — Webseite" target="_blank" rel="noopener noreferrer">
-          <img src="/images/lidl.svg" alt="Lidl Logo">
+          <img src="/images/Logo Lidl.jpeg" alt="Lidl Logo">
         </a>
       </div>
 
       <div class="market-item">
         <!-- Penny: logo links to official homepage -->
         <a class="market-link" href="https://www.penny.de" title="Penny — Webseite" target="_blank" rel="noopener noreferrer">
-          <img src="/images/penny.svg" alt="Penny Logo">
+          <img src="/images/Logo Penny.jpeg" alt="Penny Logo">
         </a>
       </div>
 
       <div class="market-item">
         <!-- Kaufland: logo links to official homepage -->
         <a class="market-link" href="https://www.kaufland.de" title="Kaufland — Webseite" target="_blank" rel="noopener noreferrer">
-          <img src="/images/kaufland.svg" alt="Kaufland Logo">
+          <img src="/images/Logo Kaufland.jpeg" alt="Kaufland Logo">
         </a>
       </div>
     </div>
@@ -156,10 +156,10 @@ const bodyHtml = `
     <!-- Market header row: logos aligned with table columns (first cell reserved for criteria) -->
     <div class="summary-market-row" aria-hidden="false" style="margin-bottom:.5rem">
       <div class="summary-market-empty">&nbsp;</div>
-      <div class="summary-market-item"><a href="/market?id=aldi" title="Aldi Süd"><img src="/images/aldi.svg" alt="Aldi Süd" style="height:34px"/></a></div>
-      <div class="summary-market-item"><a href="/market?id=lidl" title="Lidl"><img src="/images/lidl.svg" alt="Lidl" style="height:34px"/></a></div>
-      <div class="summary-market-item"><a href="/market?id=penny" title="Penny"><img src="/images/penny.svg" alt="Penny" style="height:34px"/></a></div>
-      <div class="summary-market-item"><a href="/market?id=kaufland" title="Kaufland"><img src="/images/kaufland.svg" alt="Kaufland" style="height:34px"/></a></div>
+  <div class="summary-market-item"><a href="/market?id=aldi" title="Aldi Süd"><img src="/images/Logo Aldi.jpeg" alt="Aldi Süd" style="height:34px"/></a></div>
+  <div class="summary-market-item"><a href="/market?id=lidl" title="Lidl"><img src="/images/Logo Lidl.jpeg" alt="Lidl" style="height:34px"/></a></div>
+  <div class="summary-market-item"><a href="/market?id=penny" title="Penny"><img src="/images/Logo Penny.jpeg" alt="Penny" style="height:34px"/></a></div>
+  <div class="summary-market-item"><a href="/market?id=kaufland" title="Kaufland"><img src="/images/Logo Kaufland.jpeg" alt="Kaufland" style="height:34px"/></a></div>
     </div>
     <div class="table-wrap">
       <table class="summary-table">
