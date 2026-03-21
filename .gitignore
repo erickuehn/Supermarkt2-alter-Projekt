@@ -1,3 +1,25 @@
+### Node / Build artifacts
 node_modules/
+.next/
+/.parcel-cache
+
+### Environment
 .env
+.env.*
+
+### OS / editors
 .DS_Store
+.vscode/
+.idea/
+
+### Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### Local dev DB and generated files
+prisma/dev.db
+
+### Misc
+.cache/
+dist/
