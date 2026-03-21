@@ -1,0 +1,13 @@
+{
+  "stores": [
+    {"id":"A","name":"SuperMart"},
+    {"id":"B","name":"SparPlus"},
+    {"id":"C","name":"Nah & Gut"}
+  ],
+  "products": [
+    {"name":"Milch 1L","prices":{"A":0.95,"B":0.99,"C":1.10}},
+    {"name":"Brot (500g)","prices":{"A":1.29,"B":1.19,"C":1.49}},
+    {"name":"Eier (10)","prices":{"A":2.49,"B":2.39,"C":2.59}},
+    {"name":"Butter 250g","prices":{"A":1.89,"B":1.99,"C":1.79}}
+  ]
+}

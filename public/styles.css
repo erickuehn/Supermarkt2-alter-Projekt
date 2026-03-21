@@ -1,0 +1,295 @@
+/* Copied from landingpage/styles.css */
+:root{--accent:#174ea6;--muted:#666;
+	/* logo size variables (responsive) */
+	--logo-min: 36px;
+	--logo-max: 64px;
+	--logo-preferred-vw: 4vw;
+	--logo-height: clamp(var(--logo-min), var(--logo-preferred-vw), var(--logo-max));
+
+	--logo-overview-min: 48px;
+	--logo-overview-max: 96px;
+	--logo-overview-preferred-vw: 6vw;
+	--logo-overview-height: clamp(var(--logo-overview-min), var(--logo-overview-preferred-vw), var(--logo-overview-max));
+
+	--logo-nav-min: 28px;
+	--logo-nav-max: 56px;
+	--logo-nav-preferred-vw: 3.5vw;
+	--logo-nav-height: clamp(var(--logo-nav-min), var(--logo-nav-preferred-vw), var(--logo-nav-max));
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;color:#111}
+.container{max-width:1000px;margin:0 auto;padding:1.5rem}
+.site-header{background:linear-gradient(90deg,var(--accent),#0b6bff);color:#fff;padding:2.25rem 0;text-align:center}
+.site-header h1{margin:0;font-size:clamp(1.6rem,3vw,2.4rem)}
+.site-header .tagline{opacity:.95}
+.cta{display:inline-block;margin-top:1rem;background:#fff;color:var(--accent);padding:.6rem 1rem;border-radius:6px;text-decoration:none;font-weight:600}
+
+/* framed CTA variant used on the landing page footer */
+.cta.framed{
+	background: linear-gradient(180deg,#dff6ff,#bfeaff); /* slightly richer framed CTA */
+	color: #000; /* schwarze Schrift */
+	border: 2px solid #66cfff;
+	padding: .65rem 1.1rem;
+	border-radius: 12px;
+	font-weight:700;
+	font-size:1rem;
+	box-shadow: 0 10px 34px rgba(23,78,166,0.14);
+	transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+.cta.framed:hover,
+.cta.framed:focus{
+	transform: translateY(-4px) scale(1.02);
+	border-color: #33bfff;
+	box-shadow: 0 18px 46px rgba(23,78,166,0.16);
+}
+.cta.framed:active{transform:translateY(-1px)}
+.features{padding:2rem 0}
+.features ul{display:flex;gap:1rem;flex-wrap:wrap;list-style:none;padding:0;margin:0}
+.features li{background:#f6f8ff;padding:.75rem 1rem;border-radius:8px;flex:1;min-width:180px}
+.compare{padding:1.5rem 0}
+.table-wrap{overflow:auto;background:#fff;border-radius:8px;padding:1rem;border:1px solid #eee}
+table{width:100%;border-collapse:collapse}
+th,td{padding:.6rem .75rem;text-align:left;border-bottom:1px solid #f1f1f1}
+th{background:#fafafa}
+.price{white-space:nowrap}
+.best{background:linear-gradient(90deg,#e6fff9,#d1fff0);font-weight:700}
+.signup{padding:1.5rem 0}
+#signup-form{display:flex;gap:.5rem;max-width:480px}
+#signup-form input{flex:1;padding:.6rem;border:1px solid #ddd;border-radius:6px}
+#signup-form button{padding:.6rem 1rem;background:var(--accent);color:#fff;border:none;border-radius:6px}
+.muted{color:var(--muted)}
+.site-footer{padding:1rem 0;text-align:center;color:#777}
+@media (max-width:600px){.features ul{flex-direction:column}}
+
+/* Modal for product details */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:40}
+.modal[aria-hidden="false"]{display:flex}
+.modal-dialog{background:#fff;padding:1rem;border-radius:10px;max-width:900px;width:95%;box-shadow:0 8px 30px rgba(0,0,0,0.2)}
+.login-modal-dialog{border:1px solid rgba(23,78,166,0.04);box-shadow:0 20px 60px rgba(23,78,166,0.06)}
+.modal-close{position:absolute;right:1rem;top:1rem;background:transparent;border:0;font-size:1.4rem;cursor:pointer}
+
+/* Comparison controls */
+.compare-controls input[type="search"], .compare-controls select{padding:.5rem;border:1px solid #ddd;border-radius:6px}
+.compare-controls label{font-size:.95rem}
+
+.price{white-space:nowrap}
+.best{background:linear-gradient(90deg,#e6fff9,#d1fff0);font-weight:700}
+
+/* cheapest-market column */
+.cheapest-market{font-weight:700;padding:.6rem .75rem;background:linear-gradient(90deg,#fffef0,#fff9e6);border-right:1px solid #f1f1f1}
+
+/* detailed comparison summary table */
+.summary-table{width:100%;border-collapse:collapse}
+.summary-table th,.summary-table td{padding:.6rem .75rem;border-bottom:1px solid #f1f1f1;text-align:left}
+.summary-table thead th{background:#fafafa}
+.summary-table tbody tr:nth-child(odd){background:transparent}
+.summary-table td:first-child{font-weight:700;width:220px}
+
+/* semantic cell colors */
+.cell-very-good{
+	background:linear-gradient(90deg,#b7f0c7,#7fe0a3); /* stronger green */
+	color:#02381a;
+	font-weight:700;
+	border-left:4px solid #28c76f;
+}
+.cell-good{
+	background:linear-gradient(90deg,#cfe9ff,#95d6ff); /* stronger blue */
+	color:#022b45;
+	font-weight:700;
+	border-left:4px solid #174ea6;
+}
+.cell-average{
+	background:linear-gradient(90deg,#fff2c2,#ffd54a); /* stronger amber */
+	color:#5a3e00;
+	font-weight:700;
+	border-left:4px solid #ffb300;
+}
+.cell-bad{
+	background:linear-gradient(90deg,#ffd2d2,#ff9b9b); /* stronger red */
+	color:#6b0000;
+	font-weight:700;
+	border-left:4px solid #ff4d4d;
+}
+
+/* Make semantic cell backgrounds cover the whole cell and remove dividing lines */
+.summary-table td[class*="cell-"]{
+	border-bottom: none; /* remove the thin divider so color covers full cell */
+	background-clip: padding-box;
+	padding: .8rem .75rem;
+}
+
+/* keep the first column (criteria) visually separated */
+.summary-table td:first-child{border-right:1px solid rgba(0,0,0,0.04)}
+
+.summary-table thead th{background:linear-gradient(180deg,#072a57,#174ea6);color:#fff;font-weight:800;padding:.95rem 1rem;letter-spacing:0.6px;text-transform:uppercase;border-bottom:4px solid rgba(0,0,0,0.08);box-shadow:inset 0 -8px 20px rgba(0,0,0,0.10)}
+
+.summary-table tbody tr:hover{transform:translateX(2px);background:#fffef6}
+.summary-table{transition:all .12s ease}
+
+/* market logo links */
+.market-link{
+	display:inline-flex;
+	align-items:center;
+	justify-content:center;
+	padding:8px;
+	border-radius:12px;
+	background:linear-gradient(180deg,#fff,#f6fbff);
+	border:1px solid rgba(23,78,166,0.06);
+	transition:transform .14s ease,box-shadow .14s ease,box-shadow .18s ease;
+	text-decoration:none;
+}
+
+/* Impressum / footer legal block styling */
+.impressum-container{padding:1.25rem 0;margin-top:1.5rem;border-top:1px solid rgba(0,0,0,0.04)}
+.impressum{background:linear-gradient(180deg,#0f3b7a,#174ea6);padding:1rem 1.25rem;border-radius:10px;border:1px solid rgba(255,255,255,0.06);box-shadow:0 12px 40px rgba(0,0,0,0.12)}
+.impressum h4{margin:0 0 .35rem 0;color:#ffffff;font-weight:700;letter-spacing:0.2px}
+.impressum p{margin:0;color:#ffffff;font-size:1rem;line-height:1.6;font-weight:500}
+.impressum .muted{color:rgba(255,255,255,0.85);font-size:.85rem;margin-top:.5rem}
+.impressum a{color:#cfe9ff;text-decoration:underline;font-weight:600}
+.impressum a:hover{color:#ffffff}
+
+/* Prominent hint inside the Impressum */
+.impressum-note{
+	margin-top:0.6rem;
+	padding:0.6rem 0.85rem;
+	background:rgba(255,255,255,0.06);
+	border-left:4px solid rgba(255,255,255,0.14);
+	color:rgba(255,255,255,0.98);
+	font-weight:600;
+	border-radius:6px;
+	font-size:0.98rem;
+	line-height:1.4;
+}
+.impressum-note a{color:#eaf4ff;text-decoration:underline}
+
+/* use css variables to keep logo sizes responsive and overridable */
+.market-link img{
+	height: var(--logo-height, 48px);
+	max-height: var(--logo-max, 64px);
+	width: auto;
+	display: block;
+	object-fit: contain;
+}
+
+.overview-logos img{
+	height: var(--logo-overview-height, 56px);
+	width: auto;
+	display: block;
+}
+
+.market-names-row .name img{
+	height: var(--logo-nav-height, 36px);
+	width: auto;
+	display:block;
+}
+
+.market-link:hover,
+.market-link:focus-visible{
+	transform:translateY(-6px) scale(1.04);
+	box-shadow:0 18px 40px rgba(10,30,60,0.14);
+	outline:none;
+}
+
+.market-link:focus-visible{
+	box-shadow:0 10px 24px rgba(10,30,60,0.14), 0 0 0 4px rgba(23,78,166,0.12);
+}
+
+/* market item with details link */
+.market-item{display:flex;flex-direction:column;align-items:center;gap:.35rem;min-width:72px;flex:0 0 auto}
+.market-detail-link a{font-size:.85rem;color:var(--accent);text-decoration:none}
+.market-detail-link a:hover{text-decoration:underline}
+
+/* ensure the whole block of market links wraps nicely on small screens */
+.market-links{display:flex;flex-wrap:nowrap;gap:0.75rem;align-items:center;overflow-x:auto;padding-bottom:0.35rem;-webkit-overflow-scrolling:touch}
+
+/* footer stats table */
+.footer-grid{display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap}
+.footer-table-wrap{flex:1;min-width:320px}
+.footer-meta{flex:0 0 220px}
+.footer-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #eee;border-radius:8px;overflow:hidden}
+.footer-table th,.footer-table td{padding:.5rem .6rem;border-bottom:1px solid #f1f1f1;text-align:left}
+.footer-table thead th{background:linear-gradient(90deg,var(--accent),#0b6bff);color:#fff}
+.footer-table tbody tr:nth-child(odd){background:#fbfbfb}
+.footer-table td.muted{color:var(--muted)}
+.footer-table .num{font-weight:700;text-align:right}
+
+/* market summary compact table */
+.market-summary .compact-overview{padding:0;border:none}
+.compact-table{width:100%;border-collapse:collapse}
+.compact-table th,.compact-table td{padding:.5rem .6rem;border-bottom:1px solid #f1f1f1;text-align:left}
+.compact-table thead th{background:linear-gradient(90deg,var(--accent),#0b6bff);color:#fff}
+.market-summary p.muted{margin-top:0;margin-bottom:.5rem}
+.market-summary .table-wrap{background:transparent;padding:0}
+
+/* Overview page enhancements */
+.overview-hero{background:linear-gradient(90deg,var(--accent),#0b6bff);color:#fff;padding:2.25rem 0;text-align:center}
+.overview-hero .tagline{opacity:.95;margin-top:.25rem}
+.overview-hero .cta{background:#fff;color:var(--accent);padding:.5rem .9rem;border-radius:8px;margin-top:1rem}
+
+.overview-main{background:#f6fbff;padding:2rem 1rem}
+.summary-section{margin-top:1.25rem}
+.section-accent{border-left:4px solid var(--accent);padding-left:.75rem}
+
+.market-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.market-card{background:linear-gradient(180deg,#fff,#fbfdff);padding:1rem;border-radius:12px;border:1px solid #e6eefb;box-shadow:0 8px 24px rgba(10,30,60,0.06)}
+
+.overview-logos{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.overview-logos img{height:56px;filter:drop-shadow(0 6px 18px rgba(10,30,60,0.06))}
+
+/* subtle container background for sections */
+.container.carded{background:#fff;border-radius:12px;padding:1rem;border:1px solid #eef6ff}
+
+/* supermarket names row */
+.market-names-row{display:flex;gap:1rem;justify-content:center;align-items:center;padding:0.75rem 0;margin-top:0.5rem}
+.market-names-row .name{background:linear-gradient(90deg,#fff,#f7fbff);padding:.45rem .75rem;border-radius:999px;border:1px solid rgba(23,78,166,0.08);font-weight:700;color:var(--accent)}
+.market-names-row .name a{color:inherit;text-decoration:none}
+.market-names-row .name:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(23,78,166,0.06)}
+
+
+/* login modal tweaks */
+.login-modal-dialog{max-width:420px}
+.header-actions{display:flex;gap:.5rem;align-items:center}
+
+/* Make the login modal and its form fields clearly white for readability */
+.login-modal-dialog{background:#fff;color:#111}
+#login-form{background:transparent;padding:0;margin:0}
+#login-form input{background:#fff;color:#111;border:1px solid #ddd;padding:.6rem;border-radius:6px}
+#login-form input::placeholder{color:#999}
+#login-form input:focus{outline:none;border-color:var(--accent);box-shadow:0 10px 30px rgba(23,78,166,0.10)}
+#login-form button.cta{background:var(--accent);color:#fff;border:none}
+
+/* Legend for semantic color meanings */
+.legend{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;background:#fff;border:1px solid rgba(23,78,166,0.06);padding:.45rem .6rem;border-radius:10px;box-shadow:0 8px 26px rgba(23,78,166,0.04)}
+.legend-item{display:flex;align-items:center;gap:.5rem}
+.legend-swatch{width:20px;height:14px;border-radius:4px;display:inline-block;border:1px solid rgba(0,0,0,0.06)}
+.legend-label{font-size:.9rem;color:var(--muted)}
+
+/* Ensure legend swatches show the same visuals as the table cells */
+.legend-swatch.cell-very-good{background:linear-gradient(90deg,#b7f0c7,#7fe0a3);border-left:4px solid #28c76f}
+.legend-swatch.cell-good{background:linear-gradient(90deg,#cfe9ff,#95d6ff);border-left:4px solid #174ea6}
+.legend-swatch.cell-average{background:linear-gradient(90deg,#fff2c2,#ffd54a);border-left:4px solid #ffb300}
+.legend-swatch.cell-bad{background:linear-gradient(90deg,#ffd2d2,#ff9b9b);border-left:4px solid #ff4d4d}
+
+/* Market header row above the summary table */
+.summary-market-row{display:grid;grid-template-columns:220px repeat(4,1fr);gap:.5rem;align-items:center}
+.summary-market-empty{height:10px}
+.summary-market-item{display:flex;flex-direction:column;align-items:center;gap:.25rem}
+.summary-market-item .market-name{font-size:.9rem;color:var(--muted)}
+.summary-market-item a{display:inline-flex;align-items:center;justify-content:center;padding:6px;border-radius:10px}
+.summary-market-item a img{border-radius:8px;padding:6px;background:linear-gradient(180deg,#fff,#f6fbff)}
+
+/* Make the market header items behave like full-width buttons aligned to each table column */
+.summary-market-row{grid-auto-rows: minmax(56px, auto);} /* fixed row height to match request (56px) */
+.summary-market-item{display:flex;align-items:center;justify-content:center;padding:0}
+.summary-market-item a{display:flex;width:100%;height:56px;padding:.5rem 1rem;border-radius:14px;background:linear-gradient(180deg,#ffffff,#f4f9ff);border:1px solid rgba(23,78,166,0.10);transition:transform .18s cubic-bezier(.2,.9,.3,1),box-shadow .18s cubic-bezier(.2,.9,.3,1),border-color .12s ease;align-items:center}
+.summary-market-item a img{height:var(--logo-nav-height);max-height:40px;padding:0;background:transparent;border-radius:6px}
+.summary-market-item a:hover,.summary-market-item a:focus-visible{transform:translateY(-8px) scale(1.03);box-shadow:0 26px 60px rgba(23,78,166,0.18);outline:0}
+.summary-market-item a:focus-visible{box-shadow:0 18px 46px rgba(23,78,166,0.18);outline:3px solid rgba(23,78,166,0.12);border-color:rgba(23,78,166,0.18)}
+
+@media (max-width:700px){
+	.summary-market-row{grid-template-columns:160px repeat(4,1fr)}
+	.summary-market-item a{height:48px;padding:.45rem .6rem}
+	.summary-market-item a img{max-height:32px}
+}
+
+

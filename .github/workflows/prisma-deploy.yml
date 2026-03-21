@@ -1,0 +1,49 @@
+name: CI — build, prisma migrate & seed
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-migrate:
+    runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: '--max-old-space-size=2048'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma client (Postgres schema)
+        run: npx prisma generate --schema=prisma/schema.postgres.prisma
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Run Prisma migrations (deploy)
+        run: npx prisma migrate deploy --schema=prisma/schema.postgres.prisma
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Seed database (optional)
+        run: node prisma/seed.js
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      - name: Build Next.js
+        run: npm run build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+
+      - name: Upload artifact (build)
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-build
+          path: .next

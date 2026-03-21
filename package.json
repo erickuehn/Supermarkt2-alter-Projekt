@@ -1,0 +1,25 @@
+{
+  "name": "alter-projekt-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:seed": "node prisma/seed.js",
+    "build": "next build",
+    "start": "next start -p 3001"
+  },
+  "dependencies": {
+  "@prisma/client": "^4.16.2",
+    "bcrypt": "^5.1.1",
+    "cookie": "^0.5.0",
+    "jsonwebtoken": "^9.0.0",
+    "next": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "prisma": "^4.16.2"
+  }
+}

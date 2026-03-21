@@ -1,0 +1,56 @@
+{
+  "markets": [
+    {
+      "id": "aldi",
+      "name": "Aldi Süd",
+      "scores": {
+        "price": 8,
+        "selection": 6,
+        "sustainability": 8,
+        "vegan": 7,
+        "offers": 7,
+        "customer": 9,
+        "staff": 8
+      }
+    },
+    {
+      "id": "lidl",
+      "name": "Lidl",
+      "scores": {
+        "price": 9,
+        "selection": 7,
+        "sustainability": 9,
+        "vegan": 9,
+        "offers": 8,
+        "customer": 8,
+        "staff": 7
+      }
+    },
+    {
+      "id": "penny",
+      "name": "Penny",
+      "scores": {
+        "price": 7,
+        "selection": 5,
+        "sustainability": 7,
+        "vegan": 6,
+        "offers": 6,
+        "customer": 6,
+        "staff": 6
+      }
+    },
+    {
+      "id": "kaufland",
+      "name": "Kaufland",
+      "scores": {
+        "price": 6,
+        "selection": 10,
+        "sustainability": 6,
+        "vegan": 7,
+        "offers": 9,
+        "customer": 7,
+        "staff": 6
+      }
+    }
+  ]
+}
