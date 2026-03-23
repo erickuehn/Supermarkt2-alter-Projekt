@@ -101,20 +101,20 @@ const bodyHtml = `
       </div>
 
       <div class="market-card">
-        <h3>🥉 Kaufland</h3>
-        <ul>
-          <li>riesige Auswahl (Supermarkt + Warenhaus)</li>
-          <li>viele Markenprodukte</li>
-          <li>große Filialen</li>
-        </ul>
-      </div>
-
-      <div class="market-card">
         <h3>⚖️ Penny</h3>
         <ul>
           <li>günstiger Discounter</li>
           <li>weniger Auswahl</li>
           <li>durchschnittliche Kundenzufriedenheit</li>
+        </ul>
+      </div>
+
+      <div class="market-card">
+        <h3>🥉 Kaufland</h3>
+        <ul>
+          <li>riesige Auswahl (Supermarkt + Warenhaus)</li>
+          <li>viele Markenprodukte</li>
+          <li>große Filialen</li>
         </ul>
       </div>
     </div>
