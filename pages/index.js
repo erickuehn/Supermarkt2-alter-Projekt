@@ -44,9 +44,7 @@ const bodyHtml = `
     <section id="markets" class="container markets">
     <h2>Markt-Profile</h2>
     <p>Vergleichsseiten für einzelne Märkte mit visuellen Auswertungen (Preise, Nachhaltigkeit, Sortiment etc.).</p>
-  <p>Vergleichsseiten für einzelne Märkte mit visuellen Auswertungen (Preise, Nachhaltigkeit, Sortiment etc.).</p>
-  <br/><br/>
-  <div class="market-links" style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center">
+    <div class="market-links" style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center">
       <div class="market-item">
         <!-- Aldi: logo links to official homepage -->
         <a class="market-link" href="https://www.aldi-sued.de" title="Aldi Süd — Webseite" target="_blank" rel="noopener noreferrer">
