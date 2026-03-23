@@ -156,10 +156,10 @@ const bodyHtml = `
     <!-- Market header row: logos aligned with table columns (first cell reserved for criteria) -->
     <div class="summary-market-row" aria-hidden="false" style="margin-bottom:.5rem">
       <div class="summary-market-empty">&nbsp;</div>
-  <div class="summary-market-item"><a href="/market?id=aldi" title="Aldi Süd"><img src="/images/aldi.jpg" alt="Aldi Süd" style="height:34px"/></a></div>
-  <div class="summary-market-item"><a href="/market?id=lidl" title="Lidl"><img src="/images/lidl.jpg" alt="Lidl" style="height:34px"/></a></div>
-  <div class="summary-market-item"><a href="/market?id=penny" title="Penny"><img src="/images/penny.jpg" alt="Penny" style="height:34px"/></a></div>
-  <div class="summary-market-item"><a href="/market?id=kaufland" title="Kaufland"><img src="/images/kaufland.jpg" alt="Kaufland" style="height:34px"/></a></div>
+  <div class="summary-market-item"><a href="/market?id=aldi" title="Aldi Süd"><img src="/images/aldi.jpg" alt="Aldi Süd"/></a></div>
+  <div class="summary-market-item"><a href="/market?id=lidl" title="Lidl"><img src="/images/lidl.jpg" alt="Lidl"/></a></div>
+  <div class="summary-market-item"><a href="/market?id=penny" title="Penny"><img src="/images/penny.jpg" alt="Penny"/></a></div>
+  <div class="summary-market-item"><a href="/market?id=kaufland" title="Kaufland"><img src="/images/kaufland.jpg" alt="Kaufland"/></a></div>
     </div>
     <div class="table-wrap">
       <table class="summary-table">
@@ -289,7 +289,7 @@ export default function Home(){
   {/* styles are imported globally in pages/_app.js */}
       </Head>
 
-  <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+  <div className="home-root" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
 
   {/* third-party and app scripts loaded via next/script */}
   <Script src="https://cdn.jsdelivr.net/npm/chart.js" strategy="afterInteractive" />
