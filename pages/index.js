@@ -14,34 +14,31 @@ const bodyHtml = `
 </header>
 
   <main>
-  <section id="market-summary" class="container market-summary">
-    <h2>Marktübersicht — Kurz & prägnant</h2>
-    <p class="muted">Kompakte Empfehlungstabelle und Kurzinformationen zu Preis, Sortiment, Nachhaltigkeit und Angeboten.</p>
-    <div class="compact-overview table-wrap">
-      <table class="compact-table">
-        <thead>
-          <tr><th>Kategorie</th><th>Empfehlung / Rang</th><th>Kurz</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Preis‑Leistung</td><td><strong>Lidl</strong></td><td>Sehr günstige Preise; gute Balance aus Preis & Sortiment</td></tr>
-          <tr><td>Sortiment / Auswahl</td><td><strong>Kaufland</strong></td><td>Sehr große Auswahl; auch Elektronik & Non‑Food</td></tr>
-          <tr><td>Nachhaltigkeit</td><td><strong>Lidl → Aldi Süd → Penny → Kaufland</strong></td><td>Lidl punktet mit Bio‑Sortiment & CO₂‑Maßnahmen</td></tr>
-          <tr><td>Veganes Angebot</td><td><strong>Lidl</strong></td><td>Starke vegane Eigenmarke, großes Angebot</td></tr>
-          <tr><td>Beste Angebote</td><td><strong>Kaufland → Lidl</strong></td><td>Kaufland: viele Prospekte; Lidl: regelmäßige Aktionswochen</td></tr>
-          <tr><td>Kundenfreundlichkeit</td><td><strong>Aldi Süd → Lidl</strong></td><td>Aldi: modernisierte Filialen, gute Atmosphäre</td></tr>
-        </tbody>
-      </table>
-    </div>
+      <section id="market-summary" class="container market-summary">
+        <h2>Marktübersicht — Kurz & prägnant</h2>
+        <p class="muted">Kompakte Empfehlungstabelle und Kurzinformationen zu Preis, Sortiment, Nachhaltigkeit und Angeboten.</p>
 
-    <div style="margin-top:1rem">
-      <p><strong>Praktischer Tipp:</strong> Für Basics Lidl/Aldi, für Marken & Großeinkauf Kaufland, für schnellen Einkauf Penny.</p>
-      <p>Für die vollständige, druckbare Übersicht: <a href="/market_summary.md">market_summary.md (Download/Öffnen)</a></p>
-      <p style="margin-top:0.75rem">
-        <a href="/produktsuche" class="cta framed">Produktsuche</a>
-      </p>
-      <p class="muted" style="margin-top:0.45rem">Hier können Sie den besten Preis erfahren</p>
-    </div>
-  </section>
+        <div class="compact-overview table-wrap">
+          <table class="compact-table">
+            <thead>
+              <tr><th>Kategorie</th><th>Empfehlung / Rang</th><th>Kurz</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Preis‑Leistung</td><td><strong>Lidl</strong></td><td>Sehr günstige Preise; gute Balance aus Preis & Sortiment</td></tr>
+              <tr><td>Sortiment / Auswahl</td><td><strong>Kaufland</strong></td><td>Sehr große Auswahl; auch Elektronik & Non‑Food</td></tr>
+              <tr><td>Nachhaltigkeit</td><td><strong>Lidl → Aldi Süd → Penny → Kaufland</strong></td><td>Lidl punktet mit Bio‑Sortiment & CO₂‑Maßnahmen</td></tr>
+              <tr><td>Veganes Angebot</td><td><strong>Lidl</strong></td><td>Starke vegane Eigenmarke, grosses Angebot</td></tr>
+              <tr><td>Beste Angebote</td><td><strong>Kaufland → Lidl</strong></td><td>Kaufland: viele Prospekte; Lidl: regelmäßige Aktionswochen</td></tr>
+              <tr><td>Kundenfreundlichkeit</td><td><strong>Aldi Süd → Lidl</strong></td><td>Aldi: modernisierte Filialen, gute Atmosphäre</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:1rem">
+          <p><strong>Praktischer Tipp:</strong> Für Basics Lidl/Aldi, für Marken & Großeinkauf Kaufland, für schnellen Einkauf Penny.</p>
+          <p>Für die vollständige, druckbare Übersicht: <a href="/market_summary.md">market_summary.md (Download/Öffnen)</a></p>
+        </div>
+      </section>
 
 
     <section id="markets" class="container markets">
