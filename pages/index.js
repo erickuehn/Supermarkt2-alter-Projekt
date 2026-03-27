@@ -220,17 +220,6 @@ const bodyHtml = `
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-table-wrap">
-        <h4>Markt-Übersicht (Kurz)</h4>
-        <table id="footer-stats" class="footer-table">
-          <thead>
-            <tr><th>Markt</th><th>Ø-Score</th><th>Preis</th><th>Auswahl</th><th>Nachhaltigkeit</th></tr>
-          </thead>
-          <tbody>
-            <tr><td colspan="5" class="muted">Lade Daten…</td></tr>
-          </tbody>
-        </table>
-      </div>
       <div class="footer-meta">
         <p>© <span id="year"></span> Marktvergleich — Demo</p>
         <p class="muted">Kurzstatistiken basieren auf Demo‑Daten.</p>
