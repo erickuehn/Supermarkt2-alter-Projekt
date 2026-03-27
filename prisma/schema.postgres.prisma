@@ -15,3 +15,30 @@ model User {
   password  String
   createdAt DateTime @default(now())
 }
+
+model Price {
+  id          Int            @id @default(autoincrement())
+  productName String         @unique @db.Text
+  aldi        Decimal?       @db.Decimal(8,2)
+  lidl        Decimal?       @db.Decimal(8,2)
+  penny       Decimal?       @db.Decimal(8,2)
+  kaufland    Decimal?       @db.Decimal(8,2)
+  version     Int            @default(1)
+  createdAt   DateTime       @default(now()) @db.Timestamptz(6)
+  updatedAt   DateTime       @updatedAt @db.Timestamptz(6)
+  history     PriceHistory[]
+}
+
+model PriceHistory {
+  id          Int      @id @default(autoincrement())
+  price       Price?   @relation(fields: [priceId], references: [id], onDelete: Cascade)
+  priceId     Int?
+  productName String   @db.Text
+  aldi        Decimal? @db.Decimal(8,2)
+  lidl        Decimal? @db.Decimal(8,2)
+  penny       Decimal? @db.Decimal(8,2)
+  kaufland    Decimal? @db.Decimal(8,2)
+  changedAt   DateTime @default(now()) @db.Timestamptz(6)
+  changedBy   String?  @db.Text
+  note        String?  @db.Text
+}
