@@ -267,6 +267,43 @@ const bodyHtml = `
       </form>
     </div>
   </div>
+  <script>
+    (function(){
+      function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+      async function renderFromData(){
+        try{
+          const container = document.querySelector('.compact-overview');
+          if(!container) return;
+          if(container.querySelector('.compact-table')) return; // already present
+          const res = await fetch('/data/stores.json');
+          if(!res.ok) return;
+          const data = await res.json();
+          const stores = data.stores || [];
+          const products = data.products || [];
+          const stats = stores.map(s => {
+            const prices = products.map(p => p.prices && typeof p.prices[s.id] === 'number' ? p.prices[s.id] : NaN);
+            const valid = prices.filter(Number.isFinite);
+            const avg = valid.length ? (valid.reduce((a,b)=>a+b,0)/valid.length) : null;
+            let cheapest = 0;
+            for(const p of products){
+              const vals = stores.map(st => (p.prices && typeof p.prices[st.id] === 'number') ? p.prices[st.id] : Infinity);
+              const min = Math.min(...vals);
+              if(p.prices && typeof p.prices[s.id] === 'number' && p.prices[s.id] === min) cheapest++;
+            }
+            return { id: s.id, name: s.name, avg, cheapest };
+          });
+          var rows = stats.map(function(st){
+            return '\n            <tr>\n              <td><strong>' + escapeHtml(st.name) + '</strong></td>\n              <td>' + (st.avg === null ? 'n/a' : (st.avg.toFixed(2) + ' €')) + '</td>\n              <td>' + st.cheapest + '</td>\n            </tr>\n          ';
+          }).join('');
+          var html = '\n      <table class="compact-table" style="width:100%">\n        <thead>\n          <tr><th>Markt</th><th>Ø-Preis</th><th>Anzahl günstigster Angebote</th></tr>\n        </thead>\n        <tbody>\n          ' + rows + '\n        </tbody>\n      </table>\n    ';
+          container.innerHTML = html;
+        }catch(e){ /* silence */ }
+      }
+      if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', renderFromData); else renderFromData();
+      // retry once after a short delay in case other scripts modify the DOM
+      setTimeout(renderFromData, 1200);
+    })();
+  </script>
 `;
 
 export default function Home(){
