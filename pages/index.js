@@ -36,9 +36,13 @@ const bodyHtml = `
     <div style="margin-top:1rem">
       <p><strong>Praktischer Tipp:</strong> Für Basics Lidl/Aldi, für Marken & Großeinkauf Kaufland, für schnellen Einkauf Penny.</p>
       <p>Für die vollständige, druckbare Übersicht: <a href="/market_summary.md">market_summary.md (Download/Öffnen)</a></p>
-      <p style="margin-top:0.75rem">
+      <div style="margin-top:0.75rem;display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap">
         <a href="/produktsuche" class="cta framed">Produktsuche</a>
-      </p>
+        <form action="/produktsuche" method="get" style="display:flex;gap:0.5rem;align-items:center;margin:0">
+          <input name="q" class="quick-search-input" type="search" placeholder="Das gewünschte Produkt eingeben" />
+          <button type="submit" class="cta framed big-cta">Das gewünschte Produkt eingeben</button>
+        </form>
+      </div>
       <p class="muted" style="margin-top:0.45rem">Hier können Sie den besten Preis erfahren</p>
     </div>
   </section>
