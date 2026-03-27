@@ -1,13 +1,15 @@
 {
   "stores": [
-    {"id":"A","name":"SuperMart"},
-    {"id":"B","name":"SparPlus"},
-    {"id":"C","name":"Nah & Gut"}
+    {"id":"aldi","name":"Aldi Süd"},
+    {"id":"lidl","name":"Lidl"},
+    {"id":"penny","name":"Penny"},
+    {"id":"kaufland","name":"Kaufland"}
   ],
   "products": [
-    {"name":"Milch 1L","prices":{"A":0.95,"B":0.99,"C":1.10}},
-    {"name":"Brot (500g)","prices":{"A":1.29,"B":1.19,"C":1.49}},
-    {"name":"Eier (10)","prices":{"A":2.49,"B":2.39,"C":2.59}},
-    {"name":"Butter 250g","prices":{"A":1.89,"B":1.99,"C":1.79}}
+    {"name":"Milch 1L","prices":{"aldi":0.79,"lidl":0.85,"penny":0.89,"kaufland":0.95}},
+    {"name":"Brot (500g)","prices":{"aldi":1.19,"lidl":1.29,"penny":1.09,"kaufland":1.39}},
+    {"name":"Eier (10)","prices":{"aldi":1.89,"lidl":2.09,"penny":1.79,"kaufland":2.19}},
+    {"name":"Butter 250g","prices":{"aldi":1.49,"lidl":1.59,"penny":1.69,"kaufland":1.79}},
+    {"name":"Äpfel 1kg","prices":{"aldi":1.29,"lidl":1.39,"penny":1.49,"kaufland":1.59}}
   ]
 }

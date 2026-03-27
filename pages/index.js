@@ -1,6 +1,44 @@
 import Head from 'next/head';
 import Script from 'next/script';
 
+// Build a compact market table from public data at build time so the
+// landing page shows the four supermarkets in the short overview.
+let compactTableHtml = `
+  <table class="compact-table">
+    <thead>
+      <tr><th>Markt</th><th>Ø-Preis</th><th>Anzahl günstigster Angebote</th></tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="3" class="muted">Keine Daten</td></tr>
+    </tbody>
+  </table>
+`;
+
+try {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const marketData = require('../public/data/stores.json');
+  if (marketData && marketData.stores && marketData.products) {
+    const stores = marketData.stores;
+    const products = marketData.products;
+    const stats = stores.map(s => {
+      const prices = products.map(p => p.prices && typeof p.prices[s.id] === 'number' ? p.prices[s.id] : NaN);
+      const valid = prices.filter(Number.isFinite);
+      const avg = valid.length ? (valid.reduce((a,b)=>a+b,0)/valid.length) : null;
+      let cheapest = 0;
+      for (const p of products){
+        const vals = stores.map(st => (p.prices && typeof p.prices[st.id] === 'number') ? p.prices[st.id] : Infinity);
+        const min = Math.min(...vals);
+        if (p.prices && typeof p.prices[s.id] === 'number' && p.prices[s.id] === min) cheapest++;
+      }
+      return { id: s.id, name: s.name, avg, cheapest };
+    });
+
+    compactTableHtml = `\n      <table class="compact-table" style="width:100%">\n        <thead>\n          <tr><th>Markt</th><th>Ø-Preis</th><th>Anzahl günstigster Angebote</th></tr>\n        </thead>\n        <tbody>\n          ${stats.map(st => `\n            <tr>\n              <td><strong>${st.name}</strong></td>\n              <td>${st.avg === null ? 'n/a' : (st.avg.toFixed(2) + ' €')}</td>\n              <td>${st.cheapest}</td>\n            </tr>\n          `).join('')}\n        </tbody>\n      </table>\n    `;
+  }
+} catch (err) {
+  // keep default compactTableHtml on error
+}
+
 const bodyHtml = `
     <header class="site-header">
   <div class="container">
@@ -18,19 +56,7 @@ const bodyHtml = `
     <h2>Marktübersicht — Kurz & prägnant</h2>
     <p class="muted">Kompakte Empfehlungstabelle und Kurzinformationen zu Preis, Sortiment, Nachhaltigkeit und Angeboten.</p>
     <div class="compact-overview table-wrap">
-      <table class="compact-table">
-        <thead>
-          <tr><th>Kategorie</th><th>Empfehlung / Rang</th><th>Kurz</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Preis‑Leistung</td><td><strong>Lidl</strong></td><td>Sehr günstige Preise; gute Balance aus Preis & Sortiment</td></tr>
-          <tr><td>Sortiment / Auswahl</td><td><strong>Kaufland</strong></td><td>Sehr große Auswahl; auch Elektronik & Non‑Food</td></tr>
-          <tr><td>Nachhaltigkeit</td><td><strong>Lidl → Aldi Süd → Penny → Kaufland</strong></td><td>Lidl punktet mit Bio‑Sortiment & CO₂‑Maßnahmen</td></tr>
-          <tr><td>Veganes Angebot</td><td><strong>Lidl</strong></td><td>Starke vegane Eigenmarke, großes Angebot</td></tr>
-          <tr><td>Beste Angebote</td><td><strong>Kaufland → Lidl</strong></td><td>Kaufland: viele Prospekte; Lidl: regelmäßige Aktionswochen</td></tr>
-          <tr><td>Kundenfreundlichkeit</td><td><strong>Aldi Süd → Lidl</strong></td><td>Aldi: modernisierte Filialen, gute Atmosphäre</td></tr>
-        </tbody>
-      </table>
+      ${compactTableHtml}
     </div>
 
     <div style="margin-top:1rem">
