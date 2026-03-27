@@ -1,16 +1,5 @@
 /* Copied from public/styles.css for Next.js global import */
 :root{--accent:#174ea6;--muted:#666;
-	/* color palette (harmonized) */
-	--primary: #0f3b7a; /* deep indigo */
-	--primary-600: #174ea6; /* original accent */
-	--secondary: #0b6bff; /* brighter blue used for subtle accents */
-	--background: #f6fbff; /* very light blue background */
-	--surface: #ffffff; /* cards / surfaces */
-	--text: #0b1220; /* primary text */
-	--muted: #6b7280; /* neutral muted text */
-	--cta: #ff6b35; /* warm coral CTA */
-	--cta-foreground: #ffffff;
-	--glass: rgba(255,255,255,0.6);
 	/* logo size variables (responsive) */
 	--logo-min: 36px;
 	--logo-max: 64px;
@@ -28,30 +17,30 @@
 	--logo-nav-height: clamp(var(--logo-nav-min), var(--logo-nav-preferred-vw), var(--logo-nav-max));
 }
 *{box-sizing:border-box}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;color:var(--text);background:var(--background)}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.5;margin:0;color:#111}
 .container{max-width:1000px;margin:0 auto;padding:1.5rem}
-.site-header{background:linear-gradient(90deg,var(--primary),var(--primary-600));color:var(--surface);padding:2.25rem 0;text-align:center}
+.site-header{background:linear-gradient(90deg,var(--accent),#0b6bff);color:#fff;padding:2.25rem 0;text-align:center}
 .site-header h1{margin:0;font-size:clamp(1.6rem,3vw,2.4rem)}
 .site-header .tagline{opacity:.95}
-.cta{display:inline-block;margin-top:1rem;background:var(--cta);color:var(--cta-foreground);padding:.6rem 1rem;border-radius:8px;text-decoration:none;font-weight:700}
+.cta{display:inline-block;margin-top:1rem;background:#fff;color:var(--accent);padding:.6rem 1rem;border-radius:6px;text-decoration:none;font-weight:600}
 
 /* framed CTA variant used on the landing page footer */
 .cta.framed{
-	background: linear-gradient(180deg, var(--surface), rgba(255,255,255,0.95));
-	color: var(--primary-600);
-	border: 2px solid rgba(23,78,166,0.12);
+	background: linear-gradient(180deg,#dff6ff,#bfeaff); /* slightly richer framed CTA */
+	color: #000; /* schwarze Schrift */
+	border: 2px solid #66cfff;
 	padding: .65rem 1.1rem;
 	border-radius: 12px;
 	font-weight:700;
 	font-size:1rem;
-	box-shadow: 0 8px 28px rgba(15,59,122,0.06);
+	box-shadow: 0 10px 34px rgba(23,78,166,0.14);
 	transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
 }
 .cta.framed:hover,
 .cta.framed:focus{
-	transform: translateY(-3px) scale(1.02);
-	border-color: var(--primary-600);
-	box-shadow: 0 18px 46px rgba(15,59,122,0.12);
+	transform: translateY(-4px) scale(1.02);
+	border-color: #33bfff;
+	box-shadow: 0 18px 46px rgba(23,78,166,0.16);
 }
 .cta.framed:active{transform:translateY(-1px)}
 .features{padding:2rem 0}
@@ -69,7 +58,7 @@ th{background:#fafafa}
 #signup-form input{flex:1;padding:.6rem;border:1px solid #ddd;border-radius:6px}
 #signup-form button{padding:.6rem 1rem;background:var(--accent);color:#fff;border:none;border-radius:6px}
 .muted{color:var(--muted)}
-.site-footer{padding:1rem 0;text-align:center;color:var(--muted)}
+.site-footer{padding:1rem 0;text-align:center;color:#777}
 @media (max-width:600px){.features ul{flex-direction:column}}
 
 /* Modal for product details */
