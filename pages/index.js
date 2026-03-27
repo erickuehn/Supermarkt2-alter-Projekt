@@ -36,6 +36,9 @@ const bodyHtml = `
     <div style="margin-top:1rem">
       <p><strong>Praktischer Tipp:</strong> Für Basics Lidl/Aldi, für Marken & Großeinkauf Kaufland, für schnellen Einkauf Penny.</p>
       <p>Für die vollständige, druckbare Übersicht: <a href="/market_summary.md">market_summary.md (Download/Öffnen)</a></p>
+      <p style="margin-top:0.75rem">
+        <a href="/produktsuche" class="cta framed">Produktsuche</a>
+      </p>
     </div>
   </section>
 
