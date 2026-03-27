@@ -281,6 +281,7 @@ export default function Home(){
   <Script src="https://cdn.jsdelivr.net/npm/chart.js" strategy="afterInteractive" />
   <Script src="/js/login.js" strategy="afterInteractive" />
   <Script src="/js/footer-stats.js" strategy="afterInteractive" />
+  <Script src="/js/market-summary.js" strategy="afterInteractive" />
     </>
   );
 }
