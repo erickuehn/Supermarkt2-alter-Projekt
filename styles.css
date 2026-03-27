@@ -277,10 +277,10 @@ th{background:#fafafa}
 #login-form button.cta{background:var(--accent);color:#fff;border:none}
 
 /* Legend for semantic color meanings */
-legend{display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;background:#fff;border:1px solid rgba(23,78,166,0.06);padding:.65rem .9rem;border-radius:12px;box-shadow:0 10px 34px rgba(23,78,166,0.05)}
-.legend-item{display:flex;align-items:center;gap:.75rem}
-.legend-swatch{width:26px;height:18px;border-radius:6px;display:inline-block;border:1px solid rgba(0,0,0,0.06)}
-.legend-label{font-size:1.02rem;color:var(--muted);font-weight:700}
+legend{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;background:#fff;border:1px solid rgba(23,78,166,0.06);padding:.45rem .6rem;border-radius:10px;box-shadow:0 8px 26px rgba(23,78,166,0.04)}
+.legend-item{display:flex;align-items:center;gap:.5rem}
+.legend-swatch{width:20px;height:14px;border-radius:4px;display:inline-block;border:1px solid rgba(0,0,0,0.06)}
+.legend-label{font-size:.9rem;color:var(--muted)}
 
 /* Ensure legend swatches show the same visuals as the table cells */
 .legend-swatch.cell-very-good{background:linear-gradient(90deg,#b7f0c7,#7fe0a3);border-left:4px solid #28c76f}
