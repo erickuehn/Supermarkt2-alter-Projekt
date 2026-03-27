@@ -8,7 +8,7 @@ const bodyHtml = `
     <p class="tagline">Schnell Preise vergleichen & beim Einkaufen sparen</p>
     <div style="display:flex;gap:0.75rem;align-items:center;justify-content:center">
   <a href="#compare" class="cta">Jetzt vergleichen</a>
-  <button id="login-open" class="cta">Login</button>
+  <button id="login-open" class="cta framed">Login</button>
     </div>
   </div>
 </header>
