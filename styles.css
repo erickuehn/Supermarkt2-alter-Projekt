@@ -47,7 +47,7 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-he
 .features ul{display:flex;gap:1rem;flex-wrap:wrap;list-style:none;padding:0;margin:0}
 .features li{background:#f6f8ff;padding:.75rem 1rem;border-radius:8px;flex:1;min-width:180px}
 .compare{padding:1.5rem 0}
-.table-wrap{overflow:auto;background:#fff;border-radius:8px;padding:1rem;border:1px solid #eee}
+.table-wrap{overflow:auto;background:var(--surface);border-radius:12px;padding:1.15rem;border:1px solid rgba(15,59,122,0.06);box-shadow:0 12px 30px rgba(15,59,122,0.04)}
 table{width:100%;border-collapse:collapse}
 th,td{padding:.6rem .75rem;text-align:left;border-bottom:1px solid #f1f1f1}
 th{background:#fafafa}
@@ -78,20 +78,19 @@ th{background:#fafafa}
 /* cheapest-market column */
 .cheapest-market{font-weight:700;padding:.6rem .75rem;background:linear-gradient(90deg,#fffef0,#fff9e6);border-right:1px solid #f1f1f1}
 
-/* detailed comparison summary table */
-.summary-table{width:100%;border-collapse:collapse}
-.summary-table th,.summary-table td{padding:.6rem .75rem;border-bottom:1px solid #f1f1f1;text-align:left}
-.summary-table thead th{background:#fafafa}
+.summary-table{width:100%;border-collapse:separate;border-spacing:0}
+.summary-table th,.summary-table td{padding:.9rem 1rem;border-bottom:1px solid rgba(0,0,0,0.06);text-align:left;vertical-align:middle}
+.summary-table thead th{background:linear-gradient(180deg,var(--primary),var(--primary-600));color:var(--surface);}
 .summary-table tbody tr:nth-child(odd){background:transparent}
-.summary-table td:first-child{font-weight:700;width:240px}
+.summary-table td:first-child{font-weight:800;width:240px}
 
 /* High-contrast styling for the "Kriterium" (left) column so it reads
    clearly in the detailed comparison section. This makes the full cell
    appear filled, with strong contrast and larger padding. */
 .summary-table thead th:first-child,
 .summary-table tbody td:first-child{
-	background: linear-gradient(180deg,#0b3b7a,#174ea6); /* deeper accent */
-	color: #fff;
+	background: linear-gradient(180deg,var(--primary),var(--primary-600)); /* deeper accent */
+	color: var(--surface);
 	font-weight:800;
 	padding: .95rem 1rem; /* slightly larger padding for readability */
 	border-right: none;
@@ -140,10 +139,11 @@ th{background:#fafafa}
 /* keep the first column (criteria) visually separated */
 .summary-table td:first-child{border-right:1px solid rgba(0,0,0,0.04)}
 
-.summary-table thead th{background:linear-gradient(180deg,#072a57,#174ea6);color:#fff;font-weight:800;padding:.95rem 1rem;letter-spacing:0.6px;text-transform:uppercase;border-bottom:4px solid rgba(0,0,0,0.08);box-shadow:inset 0 -8px 20px rgba(0,0,0,0.10)}
-
-.summary-table tbody tr:hover{transform:translateX(2px);background:#fffef6}
-.summary-table{transition:all .12s ease}
+.summary-table thead th{background:linear-gradient(180deg,var(--primary),var(--primary-600));color:var(--surface);font-weight:800;padding:.95rem 1rem;letter-spacing:0.6px;text-transform:uppercase;border-bottom:4px solid rgba(0,0,0,0.06);box-shadow:inset 0 -8px 20px rgba(0,0,0,0.06)}
+.summary-table thead th:first-child{border-top-left-radius:10px}
+.summary-table thead th:last-child{border-top-right-radius:10px}
+.summary-table tbody tr:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(10,30,60,0.06);background:linear-gradient(180deg,#ffffff,#fbfdff)}
+.summary-table{transition:all .14s ease}
 
 /* market logo links */
 .market-link{
