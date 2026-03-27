@@ -39,6 +39,7 @@ const bodyHtml = `
       <p style="margin-top:0.75rem">
         <a href="/produktsuche" class="cta framed">Produktsuche</a>
       </p>
+      <p class="muted" style="margin-top:0.45rem">Hier können Sie den besten Preis erfahren</p>
     </div>
   </section>
 
