@@ -392,11 +392,3 @@ legend{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;background:#fff;b
 	line-height:1.4;
 }
 .impressum-note a{color:#eaf4ff;text-decoration:underline}
-
-/* Landing quick-search & large CTA */
-.quick-search-input{flex:1;padding:.7rem 1rem;border-radius:10px;border:1px solid #e6e9ef;background:var(--surface)}
-.big-cta{padding:1rem 1.4rem;border-radius:12px;font-size:1rem;font-weight:800}
-
-@media (max-width:700px){
-	.big-cta{width:100%;display:block}
-}
