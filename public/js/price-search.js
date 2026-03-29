@@ -10,6 +10,29 @@
       container.innerHTML = '<div class="muted">Keine Treffer gefunden.</div>';
       return;
     }
+    // compute overall cheapest across all returned products
+    let overall = null; // { productName, market, price }
+    data.forEach(item=>{
+      const prices = ['aldi','lidl','penny','kaufland'].map(k=>({k,v:item[k]})).filter(p=>p.v!==null && p.v!==undefined);
+      prices.forEach(p=>{
+        const val = typeof p.v === 'string' ? parseFloat(p.v) : p.v;
+        if(val==null || Number.isNaN(val)) return;
+        if(!overall || val < overall.price){
+          overall = { productName: item.productName, market: p.k, price: val };
+        }
+      });
+    });
+
+    let summaryHtml = '';
+    if(overall){
+      summaryHtml = `<div style="padding:.6rem;border:1px solid #dfefff;background:linear-gradient(90deg,#f5fbff,#eef7ff);border-radius:8px;margin-bottom:.6rem;display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div style="font-size:1rem;font-weight:800">Günstigster Treffer</div>
+          <div style="color:#333;margin-top:.15rem">${escapeHtml(overall.productName)} — <strong>${escapeHtml(overall.market)}</strong></div>
+        </div>
+        <div style="font-weight:900;font-size:1.05rem;color:#0b6bff">${formatPrice(overall.price)}</div>
+      </div>`;
+    }
     const rows = data.map(item=>{
       // item: { productName, aldi, lidl, penny, kaufland }
       const prices = ['aldi','lidl','penny','kaufland'].map(k=>({k,v:item[k]})).filter(p=>p.v!==null && p.v!==undefined);
@@ -24,7 +47,7 @@
         </div>
       </div>`;
     }).join('\n');
-    container.innerHTML = rows;
+    container.innerHTML = summaryHtml + rows;
   }
 
   function escapeHtml(s){
