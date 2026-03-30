@@ -16,9 +16,9 @@ const bodyHtml = `
   <main>
       <section id="market-summary" class="container market-summary">
         <h2>Marktübersicht — Kurz & prägnant</h2>
-        <p class="muted">Kompakte Empfehlungstabelle und Kurzinformationen zu Preis, Sortiment, Nachhaltigkeit und Angeboten.</p>
+  <p class="muted">Kompakte Empfehlungstabelle und Kurzinformationen zu Preis, Sortiment, Nachhaltigkeit und Angeboten.</p>
 
-        <div class="compact-overview table-wrap">
+  <div class="compact-overview table-wrap">
           <table class="compact-table">
             <thead>
               <tr><th>Kategorie</th><th>Empfehlung / Rang</th><th>Kurz</th></tr>
@@ -30,6 +30,8 @@ const bodyHtml = `
               <tr><td>Veganes Angebot</td><td><strong>Lidl</strong></td><td>Starke vegane Eigenmarke, grosses Angebot</td></tr>
               <tr><td>Beste Angebote</td><td><strong>Kaufland → Lidl</strong></td><td>Kaufland: viele Prospekte; Lidl: regelmäßige Aktionswochen</td></tr>
               <tr><td>Kundenfreundlichkeit</td><td><strong>Aldi Süd → Lidl</strong></td><td>Aldi: modernisierte Filialen, gute Atmosphäre</td></tr>
+              <tr><td colspan="3">&nbsp;</td></tr>
+              <tr><td colspan="3">&nbsp;</td></tr>
             </tbody>
           </table>
         </div>
@@ -37,6 +39,8 @@ const bodyHtml = `
         <div style="margin-top:1rem">
           <p><strong>Praktischer Tipp:</strong> Für Basics Lidl/Aldi, für Marken & Großeinkauf Kaufland, für schnellen Einkauf Penny.</p>
           <p>Für die vollständige, druckbare Übersicht: <a href="/market_summary.md">market_summary.md (Download/Öffnen)</a></p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
         </div>
 
         <!-- Bester Preis Suche (verknüpft mit /api/search) -->
