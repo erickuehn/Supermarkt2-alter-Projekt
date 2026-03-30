@@ -14,10 +14,8 @@ const bodyHtml = `
   <img src="/images/penny.jpg" alt="Penny" style="height:108px;object-fit:contain" />
   <img src="/images/kaufland.jpg" alt="Kaufland" style="height:108px;object-fit:contain" />
     </div>
-  </div>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <div style="text-align:center;margin-top:0.5rem">
+    </div>
+    <div style="text-align:center;margin-top:0.5rem">
       <p class="tagline" style="margin:0">Schnell Preise vergleichen & beim Einkaufen sparen</p>
       <div style="display:flex;flex-direction:column;gap:0.5rem;align-items:center;justify-content:center;margin-top:0.5rem">
         <a href="#compare" class="cta">Jetzt vergleichen</a>
