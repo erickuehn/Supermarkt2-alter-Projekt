@@ -11,15 +11,15 @@ const bodyHtml = `
       </div>
       <h1 style="margin:0;text-align:center;flex:1">Supermarktvergleich</h1>
       <div style="display:flex;flex-direction:column;gap:0.25rem;align-items:center">
-  <img src="/images/penny.jpg" alt="Penny" style="height:108px;object-fit:contain" />
-  <img src="/images/kaufland.jpg" alt="Kaufland" style="height:108px;object-fit:contain" />
+        <img src="/images/penny.jpg" alt="Penny" style="height:108px;object-fit:contain" />
+        <img src="/images/kaufland.jpg" alt="Kaufland" style="height:108px;object-fit:contain" />
       </div>
     </div>
-    <p class="tagline">Schnell Preise vergleichen & beim Einkaufen sparen</p>
-    <div style="display:flex;gap:0.75rem;align-items:center;justify-content:center">
-  <a href="#compare" class="cta">Jetzt vergleichen</a>
-  <button id="login-open" class="cta framed">Login</button>
+    <div style="display:flex;gap:0.75rem;align-items:center;justify-content:center;margin-top:0.5rem">
+      <a href="#compare" class="cta">Jetzt vergleichen</a>
+      <button id="login-open" class="cta framed">Login</button>
     </div>
+    <p class="tagline" style="margin-top:0.5rem">Schnell Preise vergleichen & beim Einkaufen sparen</p>
   </div>
 </header>
 
