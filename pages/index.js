@@ -3,32 +3,22 @@ import Script from 'next/script';
 
 const bodyHtml = `
     <header class="site-header">
-      <div class="container">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
-          <div style="display:flex;gap:0.5rem;align-items:center">
-            <img src="/images/aldi.jpg" alt="Aldi Süd" style="height:40px;object-fit:contain" />
-            <img src="/images/lidl.jpg" alt="Lidl" style="height:40px;object-fit:contain" />
-          </div>
-          <h1 style="margin:0;text-align:center;flex:1">Supermarktvergleich</h1>
-          <div style="display:flex;gap:0.5rem;align-items:center">
-            <img src="/images/penny.jpg" alt="Penny" style="height:40px;object-fit:contain" />
-            <img src="/images/kaufland.jpg" alt="Kaufland" style="height:40px;object-fit:contain" />
-          </div>
-        </div>
-        <p class="tagline">Schnell Preise vergleichen & beim Einkaufen sparen</p>
-        <div style="display:flex;gap:0.75rem;align-items:center;justify-content:center">
-          <a href="#compare" class="cta">Jetzt vergleichen</a>
-          <button id="login-open" class="cta framed">Login</button>
-        </div>
-      </div>
-    </header>
+  <div class="container">
+    <h1>Supermarktvergleich</h1>
+    <p class="tagline">Schnell Preise vergleichen & beim Einkaufen sparen</p>
+    <div style="display:flex;gap:0.75rem;align-items:center;justify-content:center">
+  <a href="#compare" class="cta">Jetzt vergleichen</a>
+  <button id="login-open" class="cta framed">Login</button>
+    </div>
+  </div>
+</header>
 
   <main>
       <section id="market-summary" class="container market-summary">
         <h2>Marktübersicht — Kurz & prägnant</h2>
-  <p class="muted">Kompakte Empfehlungstabelle und Kurzinformationen zu Preis, Sortiment, Nachhaltigkeit und Angeboten.</p>
+        <p class="muted">Kompakte Empfehlungstabelle und Kurzinformationen zu Preis, Sortiment, Nachhaltigkeit und Angeboten.</p>
 
-  <div class="compact-overview table-wrap">
+        <div class="compact-overview table-wrap">
           <table class="compact-table">
             <thead>
               <tr><th>Kategorie</th><th>Empfehlung / Rang</th><th>Kurz</th></tr>
@@ -40,8 +30,6 @@ const bodyHtml = `
               <tr><td>Veganes Angebot</td><td><strong>Lidl</strong></td><td>Starke vegane Eigenmarke, grosses Angebot</td></tr>
               <tr><td>Beste Angebote</td><td><strong>Kaufland → Lidl</strong></td><td>Kaufland: viele Prospekte; Lidl: regelmäßige Aktionswochen</td></tr>
               <tr><td>Kundenfreundlichkeit</td><td><strong>Aldi Süd → Lidl</strong></td><td>Aldi: modernisierte Filialen, gute Atmosphäre</td></tr>
-              <tr><td colspan="3">&nbsp;</td></tr>
-              <tr><td colspan="3">&nbsp;</td></tr>
             </tbody>
           </table>
         </div>
@@ -49,8 +37,6 @@ const bodyHtml = `
         <div style="margin-top:1rem">
           <p><strong>Praktischer Tipp:</strong> Für Basics Lidl/Aldi, für Marken & Großeinkauf Kaufland, für schnellen Einkauf Penny.</p>
           <p>Für die vollständige, druckbare Übersicht: <a href="/market_summary.md">market_summary.md (Download/Öffnen)</a></p>
-          <p>&nbsp;</p>
-          <p>&nbsp;</p>
         </div>
 
         <!-- Bester Preis Suche (verknüpft mit /api/search) -->
