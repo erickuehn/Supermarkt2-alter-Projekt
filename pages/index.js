@@ -19,17 +19,45 @@ const bodyHtml = `
         <p class="muted">Kompakte Empfehlungstabelle und Kurzinformationen zu Preis, Sortiment, Nachhaltigkeit und Angeboten.</p>
 
         <div class="compact-overview table-wrap">
-          <table class="compact-table">
+          <table class="compact-table compact-markets">
             <thead>
-              <tr><th>Kategorie</th><th>Empfehlung / Rang</th><th>Kurz</th></tr>
+              <tr>
+                <th>Markt</th>
+                <th>Preis 🏷️</th>
+                <th>Sortiment 🛒</th>
+                <th>Nachhaltigkeit 🌿</th>
+                <th>Angebote 🔖</th>
+              </tr>
             </thead>
             <tbody>
-              <tr><td>Preis‑Leistung</td><td><strong>Lidl</strong></td><td>Sehr günstige Preise; gute Balance aus Preis & Sortiment</td></tr>
-              <tr><td>Sortiment / Auswahl</td><td><strong>Kaufland</strong></td><td>Sehr große Auswahl; auch Elektronik & Non‑Food</td></tr>
-              <tr><td>Nachhaltigkeit</td><td><strong>Lidl → Aldi Süd → Penny → Kaufland</strong></td><td>Lidl punktet mit Bio‑Sortiment & CO₂‑Maßnahmen</td></tr>
-              <tr><td>Veganes Angebot</td><td><strong>Lidl</strong></td><td>Starke vegane Eigenmarke, grosses Angebot</td></tr>
-              <tr><td>Beste Angebote</td><td><strong>Kaufland → Lidl</strong></td><td>Kaufland: viele Prospekte; Lidl: regelmäßige Aktionswochen</td></tr>
-              <tr><td>Kundenfreundlichkeit</td><td><strong>Aldi Süd → Lidl</strong></td><td>Aldi: modernisierte Filialen, gute Atmosphäre</td></tr>
+              <tr>
+                <td><strong>Aldi Süd</strong></td>
+                <td>Sehr günstig</td>
+                <td>Klein–mittel</td>
+                <td>Gut</td>
+                <td>Weniger Aktionen</td>
+              </tr>
+              <tr>
+                <td><strong>Lidl</strong></td>
+                <td>Sehr günstig</td>
+                <td>Mittel</td>
+                <td>Sehr gut</td>
+                <td>Regelmäßige Aktionen</td>
+              </tr>
+              <tr>
+                <td><strong>Penny</strong></td>
+                <td>Günstig</td>
+                <td>Klein</td>
+                <td>Ausreichend</td>
+                <td>Gelegentliche Angebote</td>
+              </tr>
+              <tr>
+                <td><strong>Kaufland</strong></td>
+                <td>Etwas teurer</td>
+                <td>Sehr große Auswahl</td>
+                <td>Verbesserungsfähig</td>
+                <td>Viele Prospekte/Angebote</td>
+              </tr>
             </tbody>
           </table>
         </div>
