@@ -33,15 +33,57 @@ const bodyHtml = `
         <div class="compact-overview table-wrap">
           <table class="compact-table">
             <thead>
-              <tr><th>Kategorie</th><th>Empfehlung / Rang</th><th>Kurz</th></tr>
+              <tr>
+                <th>Kriterium</th>
+                <th>Aldi Süd</th>
+                <th>Lidl</th>
+                <th>Penny</th>
+                <th>Kaufland</th>
+              </tr>
             </thead>
             <tbody>
-              <tr><td>Preis‑Leistung</td><td><strong>Lidl</strong></td><td>Sehr günstige Preise; gute Balance aus Preis & Sortiment</td></tr>
-              <tr><td>Sortiment / Auswahl</td><td><strong>Kaufland</strong></td><td>Sehr große Auswahl; auch Elektronik & Non‑Food</td></tr>
-              <tr><td>Nachhaltigkeit</td><td><strong>Lidl → Aldi Süd → Penny → Kaufland</strong></td><td>Lidl punktet mit Bio‑Sortiment & CO₂‑Maßnahmen</td></tr>
-              <tr><td>Veganes Angebot</td><td><strong>Lidl</strong></td><td>Starke vegane Eigenmarke, grosses Angebot</td></tr>
-              <tr><td>Beste Angebote</td><td><strong>Kaufland → Lidl</strong></td><td>Kaufland: viele Prospekte; Lidl: regelmäßige Aktionswochen</td></tr>
-              <tr><td>Kundenfreundlichkeit</td><td><strong>Aldi Süd → Lidl</strong></td><td>Aldi: modernisierte Filialen, gute Atmosphäre</td></tr>
+              <tr>
+                <td>Preis</td>
+                <td class="cell-very-good">Sehr günstig</td>
+                <td class="cell-very-good">Sehr günstig</td>
+                <td class="cell-good">Günstig</td>
+                <td class="cell-average">Etwas teurer</td>
+              </tr>
+              <tr>
+                <td>Auswahl</td>
+                <td class="cell-average">Klein bis mittel</td>
+                <td class="cell-good">Mittel</td>
+                <td class="cell-bad">Kleineres Sortiment</td>
+                <td class="cell-very-good">Sehr große Auswahl</td>
+              </tr>
+              <tr>
+                <td>Nachhaltigkeit</td>
+                <td class="cell-good">Gut</td>
+                <td class="cell-very-good">Sehr gut</td>
+                <td class="cell-average">Ausreichend</td>
+                <td class="cell-bad">Verbesserungsfähig</td>
+              </tr>
+              <tr>
+                <td>Vegane Produkte</td>
+                <td class="cell-good">Gut</td>
+                <td class="cell-very-good">Sehr groß</td>
+                <td class="cell-bad">Begrenzt</td>
+                <td class="cell-good">Gut</td>
+              </tr>
+              <tr>
+                <td>Angebote</td>
+                <td class="cell-bad">Weniger Aktionen</td>
+                <td class="cell-good">Viele Aktionen</td>
+                <td class="cell-average">Gelegentliche Angebote</td>
+                <td class="cell-very-good">Viele Prospekte/Markenangebote</td>
+              </tr>
+              <tr>
+                <td>Kundenfreundlichkeit</td>
+                <td class="cell-very-good">Sehr gut</td>
+                <td class="cell-good">Gut</td>
+                <td class="cell-average">Durchschnittlich</td>
+                <td class="cell-good">Gut</td>
+              </tr>
             </tbody>
           </table>
         </div>
