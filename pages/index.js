@@ -3,15 +3,25 @@ import Script from 'next/script';
 
 const bodyHtml = `
     <header class="site-header">
-  <div class="container">
-    <h1>Supermarktvergleich</h1>
-    <p class="tagline">Schnell Preise vergleichen & beim Einkaufen sparen</p>
-    <div style="display:flex;gap:0.75rem;align-items:center;justify-content:center">
-  <a href="#compare" class="cta">Jetzt vergleichen</a>
-  <button id="login-open" class="cta framed">Login</button>
-    </div>
-  </div>
-</header>
+      <div class="container">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+          <div style="display:flex;gap:0.5rem;align-items:center">
+            <img src="/images/aldi.jpg" alt="Aldi Süd" style="height:40px;object-fit:contain" />
+            <img src="/images/lidl.jpg" alt="Lidl" style="height:40px;object-fit:contain" />
+          </div>
+          <h1 style="margin:0;text-align:center;flex:1">Supermarktvergleich</h1>
+          <div style="display:flex;gap:0.5rem;align-items:center">
+            <img src="/images/penny.jpg" alt="Penny" style="height:40px;object-fit:contain" />
+            <img src="/images/kaufland.jpg" alt="Kaufland" style="height:40px;object-fit:contain" />
+          </div>
+        </div>
+        <p class="tagline">Schnell Preise vergleichen & beim Einkaufen sparen</p>
+        <div style="display:flex;gap:0.75rem;align-items:center;justify-content:center">
+          <a href="#compare" class="cta">Jetzt vergleichen</a>
+          <button id="login-open" class="cta framed">Login</button>
+        </div>
+      </div>
+    </header>
 
   <main>
       <section id="market-summary" class="container market-summary">
