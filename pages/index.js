@@ -4,23 +4,11 @@ import Script from 'next/script';
 const bodyHtml = `
     <header class="site-header">
   <div class="container">
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
-        <div style="display:flex;gap:0.5rem;align-items:center">
-  <img src="/images/aldi.jpg" alt="Aldi Süd" style="height:108px;object-fit:contain" />
-  <img src="/images/lidl.jpg" alt="Lidl" style="height:108px;object-fit:contain" />
-      </div>
-      <h1 style="margin:0;text-align:center;flex:1">Supermarktvergleich</h1>
-    <div style="display:flex;gap:0.5rem;align-items:center">
-  <img src="/images/penny.jpg" alt="Penny" style="height:108px;object-fit:contain" />
-  <img src="/images/kaufland.jpg" alt="Kaufland" style="height:108px;object-fit:contain" />
-    </div>
-    </div>
-    <div style="text-align:center;margin-top:0.5rem">
-      <p class="tagline" style="margin:0">Schnell Preise vergleichen & beim Einkaufen sparen</p>
-      <div style="display:flex;flex-direction:column;gap:0.5rem;align-items:center;justify-content:center;margin-top:0.5rem">
-        <a href="#compare" class="cta">Jetzt vergleichen</a>
-        <button id="login-open" class="cta framed">Login</button>
-      </div>
+    <h1>Supermarktvergleich</h1>
+    <p class="tagline">Schnell Preise vergleichen & beim Einkaufen sparen</p>
+    <div style="display:flex;gap:0.75rem;align-items:center;justify-content:center">
+  <a href="#compare" class="cta">Jetzt vergleichen</a>
+  <button id="login-open" class="cta framed">Login</button>
     </div>
   </div>
 </header>
@@ -33,57 +21,15 @@ const bodyHtml = `
         <div class="compact-overview table-wrap">
           <table class="compact-table">
             <thead>
-              <tr>
-                <th>Kriterium</th>
-                <th>Aldi Süd</th>
-                <th>Lidl</th>
-                <th>Penny</th>
-                <th>Kaufland</th>
-              </tr>
+              <tr><th>Kategorie</th><th>Empfehlung / Rang</th><th>Kurz</th></tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Preis</td>
-                <td class="cell-very-good">Sehr günstig</td>
-                <td class="cell-very-good">Sehr günstig</td>
-                <td class="cell-good">Günstig</td>
-                <td class="cell-average">Etwas teurer</td>
-              </tr>
-              <tr>
-                <td>Auswahl</td>
-                <td class="cell-average">Klein bis mittel</td>
-                <td class="cell-good">Mittel</td>
-                <td class="cell-bad">Kleineres Sortiment</td>
-                <td class="cell-very-good">Sehr große Auswahl</td>
-              </tr>
-              <tr>
-                <td>Nachhaltigkeit</td>
-                <td class="cell-good">Gut</td>
-                <td class="cell-very-good">Sehr gut</td>
-                <td class="cell-average">Ausreichend</td>
-                <td class="cell-bad">Verbesserungsfähig</td>
-              </tr>
-              <tr>
-                <td>Vegane Produkte</td>
-                <td class="cell-good">Gut</td>
-                <td class="cell-very-good">Sehr groß</td>
-                <td class="cell-bad">Begrenzt</td>
-                <td class="cell-good">Gut</td>
-              </tr>
-              <tr>
-                <td>Angebote</td>
-                <td class="cell-bad">Weniger Aktionen</td>
-                <td class="cell-good">Viele Aktionen</td>
-                <td class="cell-average">Gelegentliche Angebote</td>
-                <td class="cell-very-good">Viele Prospekte/Markenangebote</td>
-              </tr>
-              <tr>
-                <td>Kundenfreundlichkeit</td>
-                <td class="cell-very-good">Sehr gut</td>
-                <td class="cell-good">Gut</td>
-                <td class="cell-average">Durchschnittlich</td>
-                <td class="cell-good">Gut</td>
-              </tr>
+              <tr><td>Preis‑Leistung</td><td><strong>Lidl</strong></td><td>Sehr günstige Preise; gute Balance aus Preis & Sortiment</td></tr>
+              <tr><td>Sortiment / Auswahl</td><td><strong>Kaufland</strong></td><td>Sehr große Auswahl; auch Elektronik & Non‑Food</td></tr>
+              <tr><td>Nachhaltigkeit</td><td><strong>Lidl → Aldi Süd → Penny → Kaufland</strong></td><td>Lidl punktet mit Bio‑Sortiment & CO₂‑Maßnahmen</td></tr>
+              <tr><td>Veganes Angebot</td><td><strong>Lidl</strong></td><td>Starke vegane Eigenmarke, grosses Angebot</td></tr>
+              <tr><td>Beste Angebote</td><td><strong>Kaufland → Lidl</strong></td><td>Kaufland: viele Prospekte; Lidl: regelmäßige Aktionswochen</td></tr>
+              <tr><td>Kundenfreundlichkeit</td><td><strong>Aldi Süd → Lidl</strong></td><td>Aldi: modernisierte Filialen, gute Atmosphäre</td></tr>
             </tbody>
           </table>
         </div>
