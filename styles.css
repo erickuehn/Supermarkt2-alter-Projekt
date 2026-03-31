@@ -239,6 +239,31 @@ th{background:#fafafa}
 .market-summary p.muted{margin-top:0;margin-bottom:.5rem}
 .market-summary .table-wrap{background:transparent;padding:0}
 
+/* Specific layout and styling for the 5-column compact markets table */
+.compact-markets th,.compact-markets td{
+	vertical-align:middle; /* ensure cells are vertically centered */
+}
+.compact-markets thead th{
+	display:flex;
+	align-items:center; /* center emoji and text */
+	gap:.4rem;
+}
+/* Preferred column widths for the 5-column layout. Adjustable for responsiveness */
+.compact-markets th:nth-child(1), .compact-markets td:nth-child(1){width:24%}
+.compact-markets th:nth-child(2), .compact-markets td:nth-child(2){width:14%}
+.compact-markets th:nth-child(3), .compact-markets td:nth-child(3){width:20%}
+.compact-markets th:nth-child(4), .compact-markets td:nth-child(4){width:22%}
+.compact-markets th:nth-child(5), .compact-markets td:nth-child(5){width:20%}
+
+/* Small tweaks for the price column to avoid wrapping */
+.compact-markets td:nth-child(2){white-space:nowrap}
+
+/* Responsive: on narrow screens allow the table to scroll instead of squeezing columns */
+@media (max-width:700px){
+	.compact-markets th,.compact-markets td{width:auto}
+	.market-summary .table-wrap{overflow-x:auto}
+}
+
 /* Overview page enhancements */
 .overview-hero{background:linear-gradient(90deg,var(--accent),#0b6bff);color:#fff;padding:2.25rem 0;text-align:center}
 .overview-hero .tagline{opacity:.95;margin-top:.25rem}
