@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <!doctype html>
+  <html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Marktvergleich — Preise vergleichen & sparen</title>
+    <meta name="description" content="Finde die günstigsten Supermarkt-Preise in deiner Nähe. Einfach Produkte vergleichen und sparen.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js for product detail charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Marktvergleich</h1>
+        <p class="tagline">Schnell Preise vergleichen & beim Einkaufen sparen</p>
+        <a href="#compare" class="cta">Jetzt vergleichen</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="features" class="container features">
+        <h2>Wie es funktioniert</h2>
+        <ul>
+          <li>Produkte auswählen</li>
+          <li>Preise von Supermärkten vergleichen</li>
+          <li>Sparvorschläge erhalten</li>
+        </ul>
+      </section>
+      
+      <section id="market-summary" class="container market-summary">
+        <h2>Marktübersicht — Kurz & prägnant</h2>
+        <p class="muted">Kompakte Empfehlungstabelle und Kurzinformationen zu Preis, Sortiment, Nachhaltigkeit und Angeboten.</p>
+
+        <div class="compact-overview table-wrap">
+          <table class="compact-table compact-markets">
+            <thead>
+              <tr>
+                <th>Markt</th>
+                <th>Preis 🏷️</th>
+                <th>Sortiment 🛒</th>
+                <th>Nachhaltigkeit 🌿</th>
+                <th>Angebote 🔖</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Aldi Süd</strong></td>
+                <td>Sehr günstig</td>
+                <td>Klein–mittel</td>
+                <td>Gut</td>
+                <td>Weniger Aktionen</td>
+              </tr>
+              <tr>
+                <td><strong>Lidl</strong></td>
+                <td>Sehr günstig</td>
+                <td>Mittel</td>
+                <td>Sehr gut</td>
+                <td>Regelmäßige Aktionen</td>
+              </tr>
+              <tr>
+                <td><strong>Penny</strong></td>
+                <td>Günstig</td>
+                <td>Klein</td>
+                <td>Ausreichend</td>
+                <td>Gelegentliche Angebote</td>
+              </tr>
+              <tr>
+                <td><strong>Kaufland</strong></td>
+                <td>Etwas teurer</td>
+                <td>Sehr große Auswahl</td>
+                <td>Verbesserungsfähig</td>
+                <td>Viele Prospekte/Angebote</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:1rem">
+          <p><strong>Praktischer Tipp:</strong> Für Basics Lidl/Aldi, für Marken & Großeinkauf Kaufland, für schnellen Einkauf Penny.</p>
+          <p>Für die vollständige, druckbare Übersicht: <a href="market_summary.md">market_summary.md (Download/Öffnen)</a></p>
+        </div>
+      </section>
+
+
+      <section id="markets" class="container markets">
+        <h2>Markt-Profile</h2>
+        <p>Vergleichsseiten für einzelne Märkte mit visuellen Auswertungen (Preise, Nachhaltigkeit, Sortiment etc.).</p>
+        <div class="market-links" style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center">
+          <div class="market-item">
+            <a class="market-link" href="https://www.aldi-sued.de/" title="Aldi Süd — Webseite" target="_blank" rel="noopener noreferrer">
+              <img src="images/aldi.svg" alt="Aldi Süd Logo">
+            </a>
+            <div class="market-detail-link"><a href="market.html?id=aldi">Details</a></div>
+          </div>
+
+          <div class="market-item">
+            <a class="market-link" href="https://www.lidl.de/" title="Lidl — Webseite" target="_blank" rel="noopener noreferrer">
+              <img src="images/lidl.svg" alt="Lidl Logo">
+            </a>
+            <div class="market-detail-link"><a href="market.html?id=lidl">Details</a></div>
+          </div>
+
+          <div class="market-item">
+            <a class="market-link" href="https://www.penny.de/" title="Penny — Webseite" target="_blank" rel="noopener noreferrer">
+              <img src="images/penny.svg" alt="Penny Logo">
+            </a>
+            <div class="market-detail-link"><a href="market.html?id=penny">Details</a></div>
+          </div>
+
+          <div class="market-item">
+            <a class="market-link" href="https://www.kaufland.de/" title="Kaufland — Webseite" target="_blank" rel="noopener noreferrer">
+              <img src="images/kaufland.svg" alt="Kaufland Logo">
+            </a>
+            <div class="market-detail-link"><a href="market.html?id=kaufland">Details</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="compare" class="container compare">
+        <h2>Beispiel-Vergleich</h2>
+        <div class="compare-controls" style="margin-bottom:0.75rem;display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center">
+          <label style="display:flex;gap:.5rem;align-items:center">
+            <span class="muted">Suche</span>
+            <input id="product-search" type="search" placeholder="Produktname filtern">
+          </label>
+          <label style="display:flex;gap:.5rem;align-items:center">
+            <span class="muted">Sortierung</span>
+            <select id="product-sort">
+              <option value="default">Standard</option>
+              <option value="cheapest">Günstigste zuerst</option>
+              <option value="name">Name A–Z</option>
+            </select>
+          </label>
+          <div style="margin-left:auto" class="muted">Hinweis: Klicke auf einen Produktnamen für Details.</div>
+        </div>
+        <div class="table-wrap">
+          <table id="comparison-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Modal for product detail chart -->
+      <div id="product-modal" class="modal" aria-hidden="true">
+        <div class="modal-dialog">
+          <button class="modal-close" aria-label="Schließen">×</button>
+          <h3 id="modal-title">Produkt</h3>
+          <canvas id="productChartCanvas" style="max-width:100%;height:320px"></canvas>
+        </div>
+      </div>
+
+      <section id="signup" class="container signup">
+        <h2>Newsletter</h2>
+        <p>Erhalte wöchentliche Angebote per E‑Mail.</p>
+        <form id="signup-form">
+          <input type="email" id="email" placeholder="Deine E‑Mail" required>
+          <button type="submit">Anmelden</button>
+        </form>
+        <p id="signup-msg" class="muted"></p>
+      </section>
+
+      <section id="detailed-comparison" class="container detailed-comparison">
+        <h2>Ausführlicher Vergleich (Kurzüberblick)</h2>
+        <p class="muted">Kurze Bewertung der vier Märkte nach wichtigen Kriterien (basierend auf den zusammengefassten Angaben).</p>
+        <div class="table-wrap">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th>Kriterium</th>
+                <th>Aldi Süd</th>
+                <th>Lidl</th>
+                <th>Penny</th>
+                <th>Kaufland</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Preis</td>
+                <td class="cell-very-good">Sehr günstig</td>
+                <td class="cell-very-good">Sehr günstig (häufig günstigster)</td>
+                <td class="cell-good">Günstig</td>
+                <td class="cell-bad">Etwas teurer</td>
+              </tr>
+              <tr>
+                <td>Auswahl</td>
+                <td class="cell-average">Klein bis mittel</td>
+                <td class="cell-good">Mittel</td>
+                <td class="cell-bad">Kleineres Sortiment</td>
+                <td class="cell-very-good">Sehr große Auswahl</td>
+              </tr>
+              <tr>
+                <td>Nachhaltigkeit</td>
+                <td class="cell-good">Gut</td>
+                <td class="cell-very-good">Sehr gut (Bio, CO₂‑Maßnahmen)</td>
+                <td class="cell-average">Ausreichend</td>
+                <td class="cell-bad">Verbesserungsfähig</td>
+              </tr>
+              <tr>
+                <td>Vegane Produkte</td>
+                <td class="cell-good">Gut</td>
+                <td class="cell-very-good">Sehr groß (starke Eigenmarke)</td>
+                <td class="cell-bad">Begrenzt</td>
+                <td class="cell-good">Gut</td>
+              </tr>
+              <tr>
+                <td>Angebote</td>
+                <td class="cell-bad">Weniger Aktionen</td>
+                <td class="cell-good">Viele Aktionen</td>
+                <td class="cell-average">Gelegentliche Angebote</td>
+                <td class="cell-very-good">Viele Markenangebote / Prospekte</td>
+              </tr>
+              <tr>
+                <td>Kundenfreundlichkeit</td>
+                <td class="cell-very-good">Sehr gut</td>
+                <td class="cell-good">Gut</td>
+                <td class="cell-average">Durchschnittlich</td>
+                <td class="cell-good">Gut</td>
+              </tr>
+              <tr>
+                <td>Mitarbeiterfreundlichkeit</td>
+                <td class="cell-good">Gut</td>
+                <td class="cell-good">Gut</td>
+                <td class="cell-average">Durchschnittlich</td>
+                <td class="cell-average">Durchschnittlich</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-table-wrap">
+            <h4>Markt-Übersicht (Kurz)</h4>
+            <table id="footer-stats" class="footer-table">
+              <thead>
+                <tr><th>Markt</th><th>Ø-Score</th><th>Preis</th><th>Auswahl</th><th>Nachhaltigkeit</th></tr>
+              </thead>
+              <tbody>
+                <tr><td colspan="5" class="muted">Lade Daten…</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="footer-meta">
+            <p>© <span id="year"></span> Marktvergleich — Demo</p>
+            <p class="muted">Kurzstatistiken basieren auf Demo‑Daten.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+Elektronik, Haushaltswaren etc.
+Die anderen sind Discounter mit kleinerem Sortiment.
+Sortiment (ungefähr):
+
+
+3. Nachhaltigkeit 🌱
+Laut Nachhaltigkeits-Ranking liegt Lidl vorne, gefolgt von Aldi und Penny. 
+Ranking (Tierwohl, Umwelt, Lieferketten):
+Lidl
+Aldi Süd
+Penny
+Kaufland
+Warum Lidl gut abschneidet:
+viele Bio-Produkte
+CO₂-Reduktionsprogramme
+vegane Eigenmarken
+
+4. Veganes Essen 🌱
+Alle haben vegane Produkte, aber Unterschiede:
+
+👉 Lidl gilt als einer der besten Discounter für vegane Produkte.
+
+5. Beste Angebote 🏷️
+Ranking:
+Kaufland – viele Markenangebote
+Lidl – aggressive Rabattaktionen
+Aldi Süd – weniger Aktionen
+Penny
+Grund:Kaufland hat große Prospekt-Aktionen und Markenrabatte.
+
+6. Kundenfreundlichkeit 🧑‍🤝‍🧑
+Nach Umfragen und Tests:
+Aldi Süd
+Lidl
+Kaufland
+Penny
+Aldi hat in den letzten Jahren stark in modernere Filialen und bessere Einkaufsatmosphäre investiert. 
+
+7. Freundlichkeit der Mitarbeiter 🙂
+Das variiert stark nach Filiale. Durchschnittliche Bewertungen:
+
+Discounter haben meist weniger Personal, daher wirkt der Service manchmal weniger persönlich.
+
+Gesamtfazit 🏆
+
+👉 Gesamtsieger nach Preis-Leistung:Lidl
+👉 Bester Allround-Supermarkt (Auswahl + Angebote):Kaufland
+👉 Beste Discounter-Alternative:Aldi Süd
+
+✅ Mein praktischer Tipp (machen viele Deutsche):
+Grundnahrungsmittel: Lidl oder Aldi
+großer Einkauf / Markenprodukte: Kaufland
+schneller Einkauf: Penny
+🏆 Top-10 Supermärkte in Deutschland (Beliebtheit / Kundenzufriedenheit)
+Aldi
+Edeka
+Lidl
+Rewe
+Kaufland
+Netto Marken-Discount
+Penny
+Alnatura
+Globus
+Denn’s Biomarkt
+👉 In einer großen Verbraucher-Umfrage lag Aldi mit rund 39,9 % Beliebtheit auf Platz 1, knapp vor Edeka und Lidl. 
+
+📊 Spezieller Vergleich deiner vier Supermärkte
+
+
+🛒 Kurzprofil der vier Märkte
+🥇 Aldi Süd
+sehr günstige Preise
+sehr gute Kundenzufriedenheit
+übersichtliche Läden
+etwas kleinere Auswahl
+👉 Insgesamt einer der beliebtesten Lebensmittelhändler Deutschlands. 
+
+🥈 Lidl
+sehr günstig
+starke vegane Eigenmarke (Vemondo)
+gute Obst- und Gemüsequalität
+viele Aktionsprodukte
+👉 Einer der größten Discounter weltweit und direkter Preis-Rivale von Aldi. 
+
+🥉 Kaufland
+riesige Auswahl (ähnlich Supermarkt + Warenhaus)
+viele Markenprodukte
+große Filialen
+👉 Typisches SB-Warenhaus mit mehreren zehntausend Produkten.
+
+⚖️ Penny
+günstiger Discounter
+weniger Auswahl
+durchschnittliche Kundenzufriedenheit
+👉 Wird in Rankings meist hinter Aldi und Lidl eingeordnet.
+
+🏁 Gesamtfazit
+Bester Discounter insgesamt: Aldi
+Preis-Leistungs-Sieger: Lidl
+Größte Auswahl: Kaufland
+Schwächster der vier: Penny
+👉 Viele Deutsche kombinieren deshalb:
+Aldi/Lidl für günstige Basics
+Kaufland für große Einkäufe
+
+
+
+Hier ist ein deutlich ausführlicherer Vergleich der vier Supermärkte:
+Aldi Süd
+Lidl
+Penny
+Kaufland
+Ich habe zusätzliche Kategorien ergänzt: Filialen, Qualität, Eigenmarken, Ladenlayout, Apps, Wartezeiten, Marktanteil und Einkaufserlebnis.
+
+🛒 Großer Vergleich: Aldi Süd vs Lidl vs Penny vs Kaufland
+
+
+💰 Preisvergleich (typischer Einkauf)
+Discounter sind in Deutschland generell die günstigsten Anbieter. 
+Typischer Preisvergleich (vereinfachtes Beispiel):
+
+In manchen Tests hatten sogar alle vier denselben Preis für einen Warenkorb (26,40 €), weil viele Grundprodukte inzwischen ähnlich teuer sind. 
+👉 Fazit:Lidl und Aldi sind meistens die günstigsten.
+
+🛍️ Sortiment und Auswahl
+Discounter führen normalerweise 2.000–3.500 Produkte, während große Supermärkte deutlich mehr Artikel anbieten. 
+Ranking nach Auswahl:
+Kaufland – riesige Auswahl (Supermarkt + Warenhaus)
+Lidl – etwas mehr Produkte als Aldi
+Aldi Süd
+Penny
+Bei Kaufland bekommst du oft zusätzlich:
+Elektronik
+Kleidung
+Haushaltsgeräte
+Frischetheken
+
+🌱 Nachhaltigkeit
+Studien zeigen, dass mehrere deutsche Händler Umweltprogramme gestartet haben (CO₂-Reduktion, Lieferkettenkontrollen). 
+Vergleich:
+
+Beispiele:
+weniger Plastik
+Bio-Sortimente
+Tierwohlprogramme
+
+🌱 Vegane Produkte
+Ranking der veganen Auswahl:
+Lidl – sehr große vegane Eigenmarke
+Aldi Süd
+Kaufland
+Penny
+Typische Eigenmarken:
+
+
+🏪 Einkaufserlebnis (Laden, Atmosphäre)
+
+Viele Kunden mögen Aldi, weil der Laden schnell und übersichtlich ist.
+
+⏱️ Geschwindigkeit beim Einkauf
+Discounter sind meistens schneller.
+
+Grund:Kaufland ist viel größer und hat mehr Produkte.
+
+👥 Freundlichkeit der Mitarbeiter
+Das hängt stark von der Filiale ab, aber typische Bewertungen:
+
+
+📊 Marktposition in Deutschland
+Beliebtheitsranking (Auswahl):
+
+Aldi liegt mit rund 39,9 % Beliebtheit auf Platz 1 in einer Verbraucherumfrage. 
+
+🏆 Gesamtvergleich
+
+
+✅ Praktischer Einkaufstipp
+Viele Leute kombinieren:
+Aldi oder Lidl → günstige Basics
+Kaufland → großer Einkauf / Markenprodukte
+
+
+
+Logos :
+Logo Aldi Süd.jpeg Logo Kaufland.png Logo LIDL.png Logo Penny.png
+
+Internetseiten
+<www class="aldi de">
+<www class="lidl de"
+www.penny.de
+www.kaufland.de
+></www>
+</www>
