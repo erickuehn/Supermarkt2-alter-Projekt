@@ -67,15 +67,10 @@ const bodyHtml = `
           <p>Für die vollständige, druckbare Übersicht: <a href="/market_summary.md">market_summary.md (Download/Öffnen)</a></p>
         </div>
 
-        <!-- Bester Preis Suche (verknüpft mit /api/search) -->
+        <!-- Suche entfernt -->
         <div style="margin-top:1rem">
           <h3>Bester Preis</h3>
-          <form id="price-search-form" style="display:flex;gap:.5rem;align-items:center;max-width:640px">
-            <input id="price-search" name="q" type="search" placeholder="Produktname eingeben (z. B. Milch 1L)" style="flex:1;padding:.6rem;border:1px solid #ddd;border-radius:6px" />
-            <button type="submit" class="cta">Suchen</button>
-          </form>
-          <div id="price-search-results" style="margin-top:.6rem"></div>
-          <p class="muted" style="margin-top:.4rem">Suche findet Treffer in der Neon‑Tabelle (wenn verbunden) oder in lokalem Beispieldatensatz.</p>
+          <p class="muted">Die Produktsuche und die zugehörige Abfragefunktion wurden entfernt.</p>
         </div>
       </section>
 
